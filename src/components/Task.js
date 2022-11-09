@@ -6,6 +6,7 @@ import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Checkbox from "@mui/material/Checkbox";
+import "../components/css/Task.css";
 
 const Task = ({ task, id, deleteTask, doneTask }) => {
 	const [checked, setChecked] = useState(false);
@@ -22,8 +23,8 @@ const Task = ({ task, id, deleteTask, doneTask }) => {
 	}));
 
 	return (
-		<div style={{ display: "flex", alignItems: "center" }}>
-			<div style={{ width: "70%", maxWidth: "500px" }}>
+		<div className="container">
+			<div className="textField">
 				<Box sx={{ width: "100%", paddingTop: "8px" }}>
 					<Stack spacing={2}>
 						<Item sx={task.isDone && { backgroundColor: "#C4DFAA" }}>
@@ -32,7 +33,7 @@ const Task = ({ task, id, deleteTask, doneTask }) => {
 					</Stack>
 				</Box>
 			</div>
-			<div style={{ display: "inline" }}>
+			<div className="icons">
 				<Checkbox
 					checked={task.isDone}
 					onClick={() => {
