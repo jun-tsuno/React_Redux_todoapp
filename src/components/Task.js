@@ -8,7 +8,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import Checkbox from "@mui/material/Checkbox";
 import "../components/css/Task.css";
 import { connect } from "react-redux";
-import { deleteTask, doneTask, checked } from "./actions";
+import { deleteTask, doneTask, checked } from "../actions";
 
 const Task = ({ task, id, deleteTask, doneTask, checked }) => {
 	// Material UI
