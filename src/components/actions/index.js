@@ -25,3 +25,9 @@ export const doneTask = (id) => {
 		payload: id,
 	};
 };
+
+export const checked = () => {
+	return {
+		type: "CHECKED",
+	};
+};

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
@@ -10,8 +10,7 @@ const InputBar = ({ term, setTerm, addTask }) => {
 	const onSubmit = (event) => {
 		event.preventDefault();
 		if (term === "") return;
-		setTerm(event.target.value);
-		addTask(term.term);
+		addTask(term);
 		setTerm("");
 	};
 
@@ -32,7 +31,7 @@ const InputBar = ({ term, setTerm, addTask }) => {
 						id="outlined-required"
 						label="Add To-Do"
 						onChange={(event) => setTerm(event.target.value)}
-						value={term.term}
+						value={term}
 					/>
 				</div>
 				<div className="btn">
