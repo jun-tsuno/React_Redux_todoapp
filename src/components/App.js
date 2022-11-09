@@ -3,28 +3,28 @@ import InputBar from "./InputBar";
 import TaskList from "./TaskList";
 
 const App = () => {
-	const [task, setTask] = useState([]);
+	// const [task, setTask] = useState([]);
 
-	const addTask = (term) => {
-		setTask([...task, { task: term, isDone: false }]);
-	};
+	// const addTask = (term) => {
+	// 	setTask([...task, { task: term, isDone: false }]);
+	// };
 
-	const deleteTask = (id) => {
-		const newTaskArr = [...task];
-		newTaskArr.splice(id, 1);
-		setTask([...newTaskArr]);
-	};
+	// const deleteTask = (id) => {
+	// 	const newTaskArr = [...task];
+	// 	newTaskArr.splice(id, 1);
+	// 	setTask([...newTaskArr]);
+	// };
 
-	const doneTask = (id) => {
-		const newTaskArr = [...task];
-		const isDoneTask = newTaskArr[id];
-		isDoneTask.isDone = !isDoneTask.isDone;
-	};
+	// const doneTask = (id) => {
+	// 	const newTaskArr = [...task];
+	// 	const isDoneTask = newTaskArr[id];
+	// 	isDoneTask.isDone = !isDoneTask.isDone;
+	// };
 
 	return (
 		<div>
-			<InputBar addTask={addTask} />
-			<TaskList taskArr={task} deleteTask={deleteTask} doneTask={doneTask} />
+			<InputBar />
+			<TaskList />
 		</div>
 	);
 };

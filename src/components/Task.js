@@ -7,6 +7,8 @@ import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Checkbox from "@mui/material/Checkbox";
 import "../components/css/Task.css";
+import { connect } from "react-redux";
+import { deleteTask, doneTask } from "./actions";
 
 const Task = ({ task, id, deleteTask, doneTask }) => {
 	const [checked, setChecked] = useState(false);
@@ -18,8 +20,8 @@ const Task = ({ task, id, deleteTask, doneTask }) => {
 		padding: theme.spacing(1),
 		textAlign: "center",
 		color: theme.palette.text.secondary,
-		height: "30px",
 		fontSize: "1.2em",
+		overflowWrap: "break-word",
 	}));
 
 	return (
@@ -54,4 +56,4 @@ const Task = ({ task, id, deleteTask, doneTask }) => {
 	);
 };
 
-export default Task;
+export default connect(null, { deleteTask, doneTask })(Task);
