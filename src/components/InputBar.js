@@ -2,9 +2,9 @@ import React from "react";
 import Box from "@mui/material/Box";
 import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
-import "./css/InputBar.css";
 import { connect } from "react-redux";
 import { setTerm, addTask } from "../actions";
+import "./css/InputBar.css";
 
 const InputBar = ({ term, setTerm, addTask }) => {
 	const onSubmit = (event) => {
