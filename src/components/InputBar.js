@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
+import { connect } from "react-redux";
+import { setTerm, addTask } from "../actions";
 import "./css/InputBar.css";
 
-const InputBar = ({ addTask }) => {
-	const [term, setTerm] = useState("");
-
+const InputBar = ({ term, setTerm, addTask }) => {
 	const onSubmit = (event) => {
 		event.preventDefault();
 		if (term === "") return;
-		setTerm(event.target.value);
 		addTask(term);
 		setTerm("");
 	};
@@ -45,4 +44,8 @@ const InputBar = ({ addTask }) => {
 	);
 };
 
-export default InputBar;
+const mapStateToProps = (state) => {
+	return { term: state.term };
+};
+
+export default connect(mapStateToProps, { setTerm, addTask })(InputBar);
